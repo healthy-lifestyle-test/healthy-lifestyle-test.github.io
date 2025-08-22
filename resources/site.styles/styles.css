@@ -1,0 +1,67 @@
+:root {
+    --background-color-base: #fff;
+    --background-color-header-footer: #333;
+    --border-color-base: #a2a9b1;
+    --border-color-header-footer: #08c;
+    --text-color-base: #202122;
+    --text-color-header-footer: #eaecf0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: var( --background-color-header-footer, #333 );
+    color: var( --text-color-header-footer, #eaecf0 );
+}
+
+.site-header,
+.site-footer {
+    min-height: 40px;
+    padding: 10px 15px;
+    background-color: var( --background-color-header-footer, #333 );
+    color: var( --text-color-header-footer, #eaecf0 );
+}
+
+.site-header {
+    border-bottom: 5px var( --border-color-header-footer, #08c ) solid;
+}
+
+.site-body-header {
+    position: relative;
+}
+
+.site-body-header::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var( --border-color-base, #a2a9b1 );
+}
+
+.site-main {
+    background-color: var( --background-color-base, #fff );
+    color: var( --text-color-base, #202122 );
+}
+
+@media screen {
+    .site-main {
+        min-height: calc( 100vh - 130px - 3em );
+        padding: 1.5em;
+    }
+}
+
+.site-first-heading {
+    margin: 0;
+}
+
+.site-footer {
+    border-top: 5px var( --border-color-header-footer, #08c ) solid;
+}
